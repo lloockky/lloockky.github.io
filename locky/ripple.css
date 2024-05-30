@@ -1,0 +1,36 @@
+.ripple {
+    position: relative;
+    overflow: hidden;
+    transition: background 400ms;
+}
+
+.ripple > span.ripple_effect {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear forwards;
+    opacity: 1;
+    pointer-events: none; /* do not capture clicks */
+    transition: opacity 300ms !important;
+}
+
+.ripple > span.ripple_effect {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.ripple.ripple_dark > span.ripple_effect {
+    background-color: color-mix(in srgb, #4a6572 20%, transparent);
+}
+
+.ripple:not(.ripple_pressed) > span.ripple_effect {
+    opacity: 0;
+}
+
+.ripple.ripple_fast {
+    transition: background 200ms !important;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+    }
+}

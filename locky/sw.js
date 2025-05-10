@@ -1,4 +1,4 @@
-const cacheName = 'locky-8'
+const cacheName = 'locky-check-url-field'
 
 const preCache = async () => {
     const urlsToCache = []
